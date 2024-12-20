@@ -1,0 +1,124 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>3D Carousel</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(120, 146, 161);
+        overflow: hidden;
+      }
+
+      .birthday-message {
+        font-size: 2em;
+        font-weight: bold;
+        color: rgb(255, 105, 180);
+        text-align: center;
+        margin-bottom: 20px;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      .carousel {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate 20s infinite linear;
+        margin-bottom: 25px;
+      }
+
+      .carousel img {
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(206, 4, 163, 0.5);
+        transition: transform 0.3s ease;
+      }
+
+      .carousel img:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .carousel img:nth-child(1) {
+        transform: rotateY(0deg) translateZ(200px);
+      }
+      .carousel img:nth-child(2) {
+        transform: rotateY(60deg) translateZ(200px);
+      }
+      .carousel img:nth-child(3) {
+        transform: rotateY(120deg) translateZ(200px);
+      }
+      .carousel img:nth-child(4) {
+        transform: rotateY(180deg) translateZ(200px);
+      }
+      .carousel img:nth-child(5) {
+        transform: rotateY(240deg) translateZ(200px);
+      }
+      .carousel img:nth-child(6) {
+        transform: rotateY(300deg) translateZ(200px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="birthday-message">🎉 Happy Birthday! 🎂</div>
+    <div class="carousel">
+      <img
+        alt="Person smiling"
+        src="1.jpg"
+        class="hover-image"
+      />
+      <img
+        alt="Person wearing a colorful hat"
+        src="2.jpg"
+        class="hover-image"
+      />
+      <img
+        alt="Person in a yellow outfit"
+        src="3.jpg"
+        class="hover-image"
+      />
+      <img
+        alt="Person in a red outfit with hands together"
+        src="4.jpg"
+        class="hover-image"
+      />
+      <img
+        alt="Person smiling outdoors"
+        src="5.jpg"
+        class="hover-image"
+      />
+      <img
+        alt="Person in traditional attire"
+        src="6.jpg"
+        class="hover-image"
+      />
+    </div>
+  </body>
+</html>
